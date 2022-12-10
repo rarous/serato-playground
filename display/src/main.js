@@ -98,6 +98,7 @@ function template({ midi, selected }) {
   return html`
     <div class="canvas">
       <div class="mapping">
+        <h1>My Serato DJ Mapping for two Xone:K2</h1>
         ${midi.control.map((control) => controlDetail(control))}
       </div>
       <figure>

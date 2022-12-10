@@ -18,6 +18,9 @@
   --orange: #ffbf7f;
   --red: #ff7f7f;
   --grey: #bfbfbf;
+
+  --target-color: #09639d;
+  --icon-color: rgba(255, 255, 255, 0.87);
 }
 
 body {
@@ -30,13 +33,15 @@ body {
 
 @media (prefers-color-scheme: light) {
   :root {
+    --icon-color: #213547;
+    --target-color: #4fa1d9;
     color: #213547;
     background-color: #fff;
   }
 }
 
 
-.headers, .control-detail {
+.control-detail {
   display: grid;
 
   grid-auto-flow: column;
@@ -45,16 +50,11 @@ body {
   border-bottom: 1px solid #000;
 }
 
-.headers {
-  font-weight: bold;
-}
-
 .control-detail:target {
-  background-color: #09639d;
+  background-color: var(--target-color);
 }
 
 .user-io {
-  --icon-color: rgba(255, 255, 255, 0.87);
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -83,7 +83,12 @@ figcaption {
 
 figure svg {
   width: 300px;
-  transform: translateX(-33%);
+  margin-left: -100px;
+  z-index: 2;
+  position: relative;
+}
+figure:last-of-type svg {
+  z-index: 1;
 }
 
 .mapping {
@@ -98,4 +103,5 @@ figure svg {
   grid-template-columns: minmax(75%, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
   gap: 16px;
   width: 100%;
+  margin: 8px;
 }
