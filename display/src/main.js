@@ -1,6 +1,7 @@
 import { defAtom } from "@thi.ng/atom";
 import { html } from "lit";
 import { classMap } from "lit/directives/class-map.js";
+import { choose } from "lit/directives/choose.js";
 import { when } from "lit/directives/when.js";
 import { data } from "./mapping.js";
 import { initRenderLoop } from "./renderer.js";
@@ -17,6 +18,7 @@ function selectNote(channel, note) {
   state.resetIn("selected", { note, channel });
   return false;
 }
+
 function selectCC(channel, control) {
   console.log({ event: "select", control, channel });
   state.resetIn("selected", { control, channel });
@@ -29,6 +31,29 @@ function normalizeArray(x) {
   return [x];
 }
 
+function alias(alias) {
+  return html`
+    <code
+      >{${alias.map((x) => `${x["@name"]}: ${x["@value"]}`).join("; ")}}</code
+    >
+  `;
+}
+
+function translation(translation) {
+  const { ["@action_on"]: action, ...rest } = translation;
+  const keys = Object.keys(rest);
+  console.log({ keys });
+  return html`
+    <code>${action}</code>
+    ${keys.map((key) =>
+      choose(key, [
+        ["alias", () => alias(translation.alias)],
+        ["@static_value", () => html`${translation["@static_value"]}`],
+      ])
+    )}
+  `;
+}
+
 function details(values) {
   return html`
     <ul>
@@ -36,7 +61,7 @@ function details(values) {
         (details) => html`
           <li>
             ${details["@deck_set"]} (deck: ${details["@deck_id"]}, slot:
-            ${details["@slot_id"]})
+            ${details["@slot_id"]}) ➡ ${translation(details.translation)}
           </li>
         `
       )}
