@@ -15,7 +15,6 @@ export default defineConfig({
       output: {
         dir: "dist",
       },
-      external: /^lit/,
     },
   },
 });
