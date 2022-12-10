@@ -23,6 +23,15 @@
   --icon-color: rgba(255, 255, 255, 0.87);
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --icon-color: #213547;
+    --target-color: #4fa1d9;
+    color: #213547;
+    background-color: #fff;
+  }
+}
+
 body {
   margin: 0;
   display: flex;
@@ -31,13 +40,8 @@ body {
   min-height: 100vh;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --icon-color: #213547;
-    --target-color: #4fa1d9;
-    color: #213547;
-    background-color: #fff;
-  }
+code {
+  font-family: "Iosevka", "Menlo", monospace;
 }
 
 
