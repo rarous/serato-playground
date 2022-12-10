@@ -22,5 +22,6 @@
     "@dblechoc/plugin-lit-refresh": "^0.0.6",
     "prettier": "^2.8.1",
     "vite": "^3.2.3"
-  }
+  },
+  "packageManager": "yarn@3.3.0"
 }

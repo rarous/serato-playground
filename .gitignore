@@ -1,2 +1,4 @@
+/display/.yarn/cache/
+/display/.yarn/install-state.gz
 /display/dist/
 /display/node_modules/
