@@ -104,8 +104,8 @@ figure:last-of-type svg {
 .canvas {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: minmax(75%, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
+  grid-template-columns: minmax(66%, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
   gap: 16px;
-  width: 100%;
+  width: calc(100% - 16px);
   margin: 8px;
 }
