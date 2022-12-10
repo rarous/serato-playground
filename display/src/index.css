@@ -44,7 +44,6 @@ code {
   font-family: "Iosevka", "Menlo", monospace;
 }
 
-
 .control-detail {
   display: grid;
 
@@ -75,6 +74,21 @@ code {
 .user-io--click {}
 .user-io--output {}
 
+.user-io--output .color {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #000000;
+}
+.color.color--red {
+  background-color: var(--red);
+}
+.color.color--orange {
+  background-color: var(--orange);
+}
+.color.color--green {
+  background-color: var(--green);
+}
 
 figure {
   width: 150px;

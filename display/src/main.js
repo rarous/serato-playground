@@ -5,7 +5,15 @@ import { choose } from "lit/directives/choose.js";
 import { when } from "lit/directives/when.js";
 import { data } from "./mapping.js";
 import { initRenderLoop } from "./renderer.js";
-import { surface } from "./xone-k2.js";
+import {
+  greenBtns,
+  greenCCs,
+  orangeBtns,
+  orangeCCs,
+  redBtns,
+  redCCs,
+  surface,
+} from "./xone-k2.js";
 
 const state = defAtom({
   view: template,
@@ -26,7 +34,7 @@ function selectCC(channel, control) {
 }
 
 function normalizeArray(x) {
-  if (!userio) return [];
+  if (!x) return [];
   if (Array.isArray(x)) return x;
   return [x];
 }
@@ -42,7 +50,6 @@ function alias(alias) {
 function translation(translation) {
   const { ["@action_on"]: action, ...rest } = translation;
   const keys = Object.keys(rest);
-  console.log({ keys });
   return html`
     <code>${action}</code>
     ${keys.map((key) =>
@@ -69,11 +76,28 @@ function details(values) {
   `;
 }
 
-function action([key, value]) {
-  return html`<div>${key}${details(normalizeArray(value))}</div>`;
+function outputColor({ control, note }) {
+  const isRed = control ? redCCs.has(control) : redBtns.has(note);
+  const isOrange = control ? orangeCCs.has(control) : orangeBtns.has(note);
+  const isGreen = control ? greenCCs.has(control) : greenBtns.has(note);
+
+  return html`
+    <i
+      class="${classMap({
+        color: true,
+        "color--red": isRed,
+        "color--orange": isOrange,
+        "color--green": isGreen,
+      })}"
+    ></i>
+  `;
 }
 
-function userio(x) {
+function action([key, value]) {
+  return html` <div>${key} ${details(normalizeArray(value))}</div> `;
+}
+
+function userio(x, signal) {
   const { ["@event"]: event, ...rest } = x;
   const actions = Object.entries(rest);
   const classInfo = {
@@ -84,6 +108,7 @@ function userio(x) {
   return html`
     <div class="${classMap(classInfo)}">
       <svg><use href="#${event}"></svg>
+        ${outputColor(signal)}
       ${actions.map((x) => action(x))}
     </div>
   `;
@@ -97,6 +122,7 @@ function controlDetail(control) {
   } = control;
   const isCC = event === "Control Change";
   const isNote = event === "Note On";
+  const key = isCC ? "control" : "note";
   return html`
     <div
       id="ctrl-${ch}-${ctrl}${isCC ? "-cc" : ""}"
@@ -114,7 +140,7 @@ function controlDetail(control) {
       </div>
       ${normalizeArray(control.userio)
         .filter(Boolean)
-        .map((x) => userio(x))}
+        .map((x) => userio(x, { [key]: ctrl }))}
     </div>
   `;
 }
