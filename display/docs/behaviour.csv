@@ -1,0 +1,17 @@
+explicit
+toggle
+static
+multi_toggle
+decrement_wrapped
+increment_wrapped
+decrement
+increment
+relative
+explicit_on_down
+multi_toggle_on_down
+toggle_on_down
+static_on_down
+flashing
+range
+curve
+ticks_to_time
