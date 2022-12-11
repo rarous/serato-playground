@@ -26,7 +26,7 @@ export const greenCCs = new Set([
   63, 68, 69,
 ]);
 
-export function surface({ channel, selected }) {
+export function surface({ channel, selected, onSelection }) {
   function btnStyles(xs) {
     const mappings = new Set(xs);
     const isSelected =
@@ -48,6 +48,14 @@ export function surface({ channel, selected }) {
       "cc--red": isSelected && redCCs.has(selected?.control),
       "cc--orange": isSelected && orangeCCs.has(selected?.control),
       "cc--green": isSelected && greenCCs.has(selected?.control),
+    };
+  }
+
+  function handleClick(selection) {
+    return (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      onSelection(Object.assign({ channel }, selection));
     };
   }
 
@@ -90,7 +98,11 @@ export function surface({ channel, selected }) {
                       transform="matrix(110.85001 0 0 -18.4 424.4 1075.64)"></image>
           </g>
           <g clip-path="url(#b)" transform="matrix(1.33333 0 0 -1.33333 0 1587.52)">
-              <a href="#ctrl-${channel}-0-cc">
+              <a href="#ctrl-${channel}-0-cc"
+                 @click="${handleClick({
+                   notes: [52, 88, 124],
+                   ccs: [0, 22, 44],
+                 })}">
                   <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10"
                         d="M202.7 1043.03c0 26.07 21.14 47.21 47.21 47.21h274.08c26.07 0 47.21-21.14 47.21-47.21V136.85c0-26.07-21.14-47.21-47.21-47.21H249.91c-26.07 0-47.21 21.14-47.21 47.21z"></path>
                   <path class="${classMap(
@@ -103,7 +115,11 @@ export function surface({ channel, selected }) {
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M241.95 1011.71c0 10.18 8.25 18.43 18.42 18.43 10.18 0 18.43-8.25 18.43-18.43 0-10.17-8.25-18.42-18.43-18.42-10.17 0-18.42 8.25-18.42 18.42Z"></path>
-              <a href="#ctrl-${channel}-1-cc">
+              <a href="#ctrl-${channel}-1-cc"
+                  @click="${handleClick({
+                    notes: [53, 89, 125],
+                    ccs: [1, 23, 45],
+                  })}">
                   <path class="${classMap(
                     Object.assign(
                       btnStyles([53, 89, 125]),
@@ -114,7 +130,11 @@ export function surface({ channel, selected }) {
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M325.3 1011.71c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42Z"></path>
-              <a href="#ctrl-${channel}-2-cc">
+              <a href="#ctrl-${channel}-2-cc"
+                 @click="${handleClick({
+                   notes: [54, 90, 126],
+                   ccs: [2, 24, 46],
+                 })}">
                   <path class="${classMap(
                     Object.assign(
                       btnStyles([54, 90, 126]),
@@ -125,7 +145,11 @@ export function surface({ channel, selected }) {
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M410.6 1011.71c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42Z"></path>
-              <a href="#ctrl-${channel}-3-cc">
+              <a href="#ctrl-${channel}-3-cc"
+                @click="${handleClick({
+                  notes: [55, 91, 127],
+                  ccs: [3, 25, 47],
+                })}">
                   <path class="${classMap(
                     Object.assign(
                       btnStyles([55, 91, 127]),
@@ -136,309 +160,363 @@ export function surface({ channel, selected }) {
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M495.85 1011.71c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42Z"></path>
-              <a href="#ctrl-${channel}-4-cc">
+              <a href="#ctrl-${channel}-4-cc"
+                @click="${handleClick({ ccs: [4, 26, 48] })}">
                   <path class="${classMap(knobStyles([4, 26, 48]))}"
                         d="M241.95 932.16c0 10.18 8.25 18.43 18.42 18.43 10.18 0 18.43-8.25 18.43-18.43 0-10.17-8.25-18.42-18.43-18.42-10.17 0-18.42 8.25-18.42 18.42"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M241.95 932.16c0 10.18 8.25 18.43 18.42 18.43 10.18 0 18.43-8.25 18.43-18.43 0-10.17-8.25-18.42-18.43-18.42-10.17 0-18.42 8.25-18.42 18.42Z"></path>
-              <a href="#ctrl-${channel}-5-cc">
+              <a href="#ctrl-${channel}-5-cc"
+                @click="${handleClick({ ccs: [5, 27, 49] })}">
                   <path class="${classMap(knobStyles([5, 27, 49]))}"
                         d="M325.3 932.16c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M325.3 932.16c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42Z"></path>
-              <a href="#ctrl-${channel}-6-cc">
+              <a href="#ctrl-${channel}-6-cc"
+                  @click="${handleClick({ ccs: [6, 28, 50] })}">
                   <path class="${classMap(knobStyles([6, 28, 50]))}"
                         d="M410.6 932.16c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M410.6 932.16c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42Z"></path>
-              <a href="#ctrl-${channel}-7-cc">
+              <a href="#ctrl-${channel}-7-cc"
+                  @click="${handleClick({ ccs: [7, 29, 51] })}">
                   <path class="${classMap(knobStyles([7, 29, 51]))}"
                         d="M495.85 932.16c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M495.85 932.16c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42Z"></path>
-              <a href="#ctrl-${channel}-8-cc">
+              <a href="#ctrl-${channel}-8-cc"
+                  @click="${handleClick({ ccs: [8, 30, 52] })}">
                   <path class="${classMap(knobStyles([8, 30, 52]))}"
                         d="M241.95 822.27c0 10.17 8.25 18.42 18.42 18.42 10.18 0 18.43-8.25 18.43-18.42 0-10.18-8.25-18.43-18.43-18.43-10.17 0-18.42 8.25-18.42 18.43"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M241.95 822.27c0 10.17 8.25 18.42 18.42 18.42 10.18 0 18.43-8.25 18.43-18.42 0-10.18-8.25-18.43-18.43-18.43-10.17 0-18.42 8.25-18.42 18.43Z"></path>
-              <a href="#ctrl-${channel}-9-cc">
+              <a href="#ctrl-${channel}-9-cc"
+                  @click="${handleClick({ ccs: [9, 31, 53] })}">
                   <path class="${classMap(knobStyles([9, 31, 53]))}"
                         d="M325.3 822.27c0 10.17 8.25 18.42 18.43 18.42 10.17 0 18.42-8.25 18.42-18.42 0-10.18-8.25-18.43-18.42-18.43-10.18 0-18.43 8.25-18.43 18.43"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M325.3 822.27c0 10.17 8.25 18.42 18.43 18.42 10.17 0 18.42-8.25 18.42-18.42 0-10.18-8.25-18.43-18.42-18.43-10.18 0-18.43 8.25-18.43 18.43Z"></path>
-              <a href="#ctrl-${channel}-10-cc">
+              <a href="#ctrl-${channel}-10-cc"
+                  @click="${handleClick({ ccs: [10, 32, 54] })}">
                   <path class="${classMap(knobStyles([10, 32, 54]))}"
                         d="M410.6 822.27c0 10.17 8.25 18.42 18.43 18.42 10.17 0 18.42-8.25 18.42-18.42 0-10.18-8.25-18.43-18.42-18.43-10.18 0-18.43 8.25-18.43 18.43"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M410.6 822.27c0 10.17 8.25 18.42 18.43 18.42 10.17 0 18.42-8.25 18.42-18.42 0-10.18-8.25-18.43-18.42-18.43-10.18 0-18.43 8.25-18.43 18.43Z"></path>
-              <a href="#ctrl-${channel}-11-cc">
+              <a href="#ctrl-${channel}-11-cc"
+                  @click="${handleClick({ ccs: [11, 33, 55] })}">
                   <path class="${classMap(knobStyles([11, 33, 55]))}"
                         d="M495.85 822.27c0 10.17 8.25 18.42 18.43 18.42 10.17 0 18.42-8.25 18.42-18.42 0-10.18-8.25-18.43-18.42-18.43-10.18 0-18.43 8.25-18.43 18.43"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M495.85 822.27c0 10.17 8.25 18.42 18.43 18.42 10.17 0 18.42-8.25 18.42-18.42 0-10.18-8.25-18.43-18.42-18.43-10.18 0-18.43 8.25-18.43 18.43Z"></path>
-              <a href="#ctrl-${channel}-12-cc">
+              <a href="#ctrl-${channel}-12-cc"
+                  @click="${handleClick({ ccs: [12, 34, 56] })}">
                   <path class="${classMap(knobStyles([12, 34, 56]))}"
                         d="M241.95 710.46c0 10.18 8.25 18.43 18.42 18.43 10.18 0 18.43-8.25 18.43-18.43 0-10.17-8.25-18.42-18.43-18.42-10.17 0-18.42 8.25-18.42 18.42"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M241.95 710.46c0 10.18 8.25 18.43 18.42 18.43 10.18 0 18.43-8.25 18.43-18.43 0-10.17-8.25-18.42-18.43-18.42-10.17 0-18.42 8.25-18.42 18.42Z"></path>
-              <a href="#ctrl-${channel}-13-cc">
+              <a href="#ctrl-${channel}-13-cc"
+                  @click="${handleClick({ ccs: [13, 35, 57] })}">
                   <path class="${classMap(knobStyles([13, 35, 57]))}"
                         d="M325.3 710.46c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M325.3 710.46c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42Z"></path>
-              <a href="#ctrl-${channel}-14-cc">
+              <a href="#ctrl-${channel}-14-cc"
+                  @click="${handleClick({ ccs: [14, 36, 58] })}">
                   <path class="${classMap(knobStyles([14, 36, 58]))}"
                         d="M410.6 710.46c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M410.6 710.46c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42Z"></path>
-              <a href="#ctrl-${channel}-15-cc">
+              <a href="#ctrl-${channel}-15-cc"
+                  @click="${handleClick({ ccs: [15, 37, 59] })}">
                   <path class="${classMap(knobStyles([15, 37, 59]))}"
                         d="M495.85 710.46c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M495.85 710.46c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42Z"></path>
-              <a href="#ctrl-${channel}-52">
+              <a href="#ctrl-${channel}-52"
+                  @click="${handleClick({ notes: [52, 88, 124] })}">
                   <path class="${classMap(btnStyles([52, 88, 124]))}"
                         d="M240.05 984.95c0 1.95 1.59 3.54 3.54 3.54h31.17c1.95 0 3.54-1.59 3.54-3.54v-14.17c0-1.95-1.59-3.54-3.54-3.54h-31.17c-1.95 0-3.54 1.59-3.54 3.54z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M240.05 984.95c0 1.95 1.59 3.54 3.54 3.54h31.17c1.95 0 3.54-1.59 3.54-3.54v-14.17c0-1.95-1.59-3.54-3.54-3.54h-31.17c-1.95 0-3.54 1.59-3.54 3.54z"></path>
-              <a href="#ctrl-${channel}-53">
+              <a href="#ctrl-${channel}-53"
+                  @click="${handleClick({ notes: [53, 89, 125] })}">
                   <path class="${classMap(btnStyles([53, 89, 125]))}"
                         d="M325.3 984.95c0 1.95 1.59 3.54 3.54 3.54h31.17c1.95 0 3.54-1.59 3.54-3.54v-14.17c0-1.95-1.59-3.54-3.54-3.54h-31.17c-1.95 0-3.54 1.59-3.54 3.54z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M325.3 984.95c0 1.95 1.59 3.54 3.54 3.54h31.17c1.95 0 3.54-1.59 3.54-3.54v-14.17c0-1.95-1.59-3.54-3.54-3.54h-31.17c-1.95 0-3.54 1.59-3.54 3.54z"></path>
-              <a href="#ctrl-${channel}-54">
+              <a href="#ctrl-${channel}-54"
+                  @click="${handleClick({ notes: [54, 90, 126] })}">
                   <path class="${classMap(btnStyles([54, 90, 126]))}"
                         d="M410.6 984.95c0 1.95 1.59 3.54 3.54 3.54h31.17a3.547 3.547 0 0 0 3.54-3.54v-14.17c0-1.95-1.59-3.54-3.54-3.54h-31.17c-1.95 0-3.54 1.59-3.54 3.54z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M410.6 984.95c0 1.95 1.59 3.54 3.54 3.54h31.17a3.547 3.547 0 0 0 3.54-3.54v-14.17c0-1.95-1.59-3.54-3.54-3.54h-31.17c-1.95 0-3.54 1.59-3.54 3.54z"></path>
-              <a href="#ctrl-${channel}-55">
+              <a href="#ctrl-${channel}-55"
+                    @click="${handleClick({ notes: [55, 91, 127] })}">
                   <path class="${classMap(btnStyles([55, 91, 127]))}"
                         d="M495.85 984.95c0 1.95 1.59 3.54 3.54 3.54h31.17c1.95 0 3.54-1.59 3.54-3.54v-14.17c0-1.95-1.59-3.54-3.54-3.54h-31.17a3.547 3.547 0 0 0-3.54 3.54z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M495.85 984.95c0 1.95 1.59 3.54 3.54 3.54h31.17c1.95 0 3.54-1.59 3.54-3.54v-14.17c0-1.95-1.59-3.54-3.54-3.54h-31.17a3.547 3.547 0 0 0-3.54 3.54z"></path>
-              <a href="#ctrl-${channel}-48">
+              <a href="#ctrl-${channel}-48"
+                    @click="${handleClick({ notes: [48, 84, 120] })}">
                   <path class="${classMap(btnStyles([48, 84, 120]))}"
                         d="M232.5 889.97c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M232.5 889.97c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-49">
+              <a href="#ctrl-${channel}-49"
+                    @click="${handleClick({ notes: [49, 85, 121] })}">
                   <path class="${classMap(btnStyles([49, 85, 121]))}"
                         d="M317.75 889.97c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M317.75 889.97c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-50">
+              <a href="#ctrl-${channel}-50"
+                    @click="${handleClick({ notes: [50, 86, 122] })}">
                   <path class="${classMap(btnStyles([50, 86, 122]))}"
                         d="M403 889.97c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M403 889.97c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-51">
+              <a href="#ctrl-${channel}-51"
+                    @click="${handleClick({ notes: [51, 87, 123] })}">
                   <path class="${classMap(btnStyles([51, 87, 123]))}"
                         d="M488.25 889.97c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M488.25 889.97c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-44">
+              <a href="#ctrl-${channel}-44"
+                    @click="${handleClick({ notes: [44, 80, 116] })}">
                   <path class="${classMap(btnStyles([44, 80, 116]))}"
                         d="M232.5 778.17c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M232.5 778.17c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-45">
+              <a href="#ctrl-${channel}-45"
+                    @click="${handleClick({ notes: [45, 81, 117] })}">
                   <path class="${classMap(btnStyles([45, 81, 117]))}"
                         d="M317.75 778.17c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M317.75 778.17c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-46">
+              <a href="#ctrl-${channel}-46"
+                    @click="${handleClick({ notes: [46, 82, 118] })}">
                   <path class="${classMap(btnStyles([46, 82, 118]))}"
                         d="M403 778.17c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M403 778.17c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-47">
+              <a href="#ctrl-${channel}-47"
+                    @click="${handleClick({ notes: [47, 83, 119] })}">
                   <path class="${classMap(btnStyles([47, 83, 119]))}"
                         d="M488.25 778.17c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M488.25 778.17c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-40">
+              <a href="#ctrl-${channel}-40"
+                    @click="${handleClick({ notes: [40, 76, 112] })}">
                   <path class="${classMap(btnStyles([40, 76, 112]))}"
                         d="M232.5 668.27c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M232.5 668.27c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-41">
+              <a href="#ctrl-${channel}-41"
+                @click="${handleClick({ notes: [41, 77, 113] })}">
                   <path class="${classMap(btnStyles([41, 77, 113]))}"
                         d="M317.75 668.27c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M317.75 668.27c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-42">
+              <a href="#ctrl-${channel}-42"
+                    @click="${handleClick({ notes: [42, 78, 114] })}">
                   <path class="${classMap(btnStyles([42, 78, 114]))}"
                         d="M403 668.27c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M403 668.27c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-43">
+              <a href="#ctrl-${channel}-43"
+                    @click="${handleClick({ notes: [43, 79, 115] })}">
                   <path class="${classMap(btnStyles([43, 79, 115]))}"
                         d="M488.25 668.27c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M488.25 668.27c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
 
-              <a href="#ctrl-${channel}-16-cc">
+              <a href="#ctrl-${channel}-16-cc"
+                  @click="${handleClick({ ccs: [16, 38, 60] })}">
                   <path class="${classMap(knobStyles([16, 38, 60]))}"
                         stroke="#000" stroke-linejoin="round" stroke-miterlimit="10"
                         stroke-width=".5"
                         d="M 255.2 405.39 h 8.5 v 192.75 h -8.5 z"></path>
               </a>
-              <a href="#ctrl-${channel}-17-cc">
+              <a href="#ctrl-${channel}-17-cc"
+                @click="${handleClick({ ccs: [17, 39, 61] })}">
                   <path class="${classMap(knobStyles([17, 39, 61]))}"
                         stroke="#000" stroke-linejoin="round" stroke-miterlimit="10"
                         stroke-width=".5"
                         d="M 340.5 405.39 h 8.5 v 192.75 h -8.5 z"></path>
               </a>
-              <a href="#ctrl-${channel}-18-cc">
+              <a href="#ctrl-${channel}-18-cc"
+                    @click="${handleClick({ ccs: [18, 40, 62] })}">
                   <path class="${classMap(knobStyles([18, 40, 62]))}"
                         stroke="#000" stroke-linejoin="round" stroke-miterlimit="10"
                         stroke-width=".5"
                         d="M 425.75 405.39 h 8.5 v 192.75 h -8.5 z"></path>
               </a>
-              <a href="#ctrl-${channel}-19-cc">
+              <a href="#ctrl-${channel}-19-cc"
+                    @click="${handleClick({ ccs: [19, 41, 63] })}">
                   <path class="${classMap(knobStyles([19, 41, 63]))}"
                         stroke="#000" stroke-linejoin="round" stroke-miterlimit="10"
                         stroke-width=".5"
                         d="M 511 405.39 h 8.5 v 192.75 H 511 Z"></path>
               </a>
 
-              <a href="#ctrl-${channel}-36">
+              <a href="#ctrl-${channel}-36"
+                    @click="${handleClick({ notes: [36, 72, 108] })}">
                   <path class="${classMap(btnStyles([36, 72, 108]))}"
                         d="M232.5 355.67c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M232.5 355.67c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-37">
+              <a href="#ctrl-${channel}-37"
+                    @click="${handleClick({ notes: [37, 73, 109] })}">
                   <path class="${classMap(btnStyles([37, 73, 109]))}"
                         d="M317.75 355.67c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M317.75 355.67c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-38">
+              <a href="#ctrl-${channel}-38"
+                    @click="${handleClick({ notes: [38, 74, 110] })}">
                   <path class="${classMap(btnStyles([38, 74, 110]))}"
                         d="M403 355.67c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M403 355.67c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-39">
+              <a href="#ctrl-${channel}-39"
+                    @click="${handleClick({ notes: [39, 75, 111] })}">
                   <path class="${classMap(btnStyles([39, 75, 111]))}"
                         d="M488.25 355.67c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M488.25 355.67c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-32">
+              <a href="#ctrl-${channel}-32"
+                @click="${handleClick({ notes: [32, 68, 104] })}">
                   <path class="${classMap(btnStyles([32, 68, 104]))}"
                         d="M232.5 312.07c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M232.5 312.07c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-33">
+              <a href="#ctrl-${channel}-33"
+                 @click="${handleClick({ notes: [33, 69, 105] })}">
                   <path class="${classMap(btnStyles([33, 69, 105]))}"
                         d="M317.75 312.07c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M317.75 312.07c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-34">
+              <a href="#ctrl-${channel}-34"
+                @click="${handleClick({ notes: [34, 70, 106] })}">
                   <path class="${classMap(btnStyles([34, 70, 106]))}"
                         d="M403 312.07c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M403 312.07c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-35">
+              <a href="#ctrl-${channel}-35"
+                @click="${handleClick({ notes: [35, 71, 107] })}">
                   <path class="${classMap(btnStyles([35, 71, 107]))}"
                         d="M488.25 312.07c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M488.25 312.07c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-28">
+              <a href="#ctrl-${channel}-28"
+                @click="${handleClick({ notes: [28, 64, 100] })}">
                   <path class="${classMap(btnStyles([28, 64, 100]))}"
                         d="M232.5 266.62c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M232.5 266.62c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-29">
+              <a href="#ctrl-${channel}-29"
+                @click="${handleClick({ notes: [29, 65, 101] })}">
                   <path class="${classMap(btnStyles([29, 65, 101]))}"
                         d="M317.75 266.62c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M317.75 266.62c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-30">
+              <a href="#ctrl-${channel}-30"
+                @click="${handleClick({ notes: [30, 66, 102] })}">
                   <path class="${classMap(btnStyles([30, 66, 102]))}"
                         d="M403 266.62c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M403 266.62c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-31">
+              <a href="#ctrl-${channel}-31"
+                @click="${handleClick({ notes: [31, 67, 103] })}">
                   <path class="${classMap(btnStyles([31, 67, 103]))}"
                         d="M488.25 266.62c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M488.25 266.62c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-24">
+              <a href="#ctrl-${channel}-24"
+                @click="${handleClick({ notes: [24, 60, 96] })}">
                   <path class="${classMap(btnStyles([24, 60, 96]))}"
                         d="M232.5 221.12c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M232.5 221.12c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-25">
+              <a href="#ctrl-${channel}-25"
+                @click="${handleClick({ notes: [25, 61, 97] })}">
                   <path class="${classMap(btnStyles([25, 61, 97]))}"
                         d="M317.75 221.12c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M317.75 221.12c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-26">
+              <a href="#ctrl-${channel}-26"
+                @click="${handleClick({ notes: [26, 62, 98] })}">
                   <path class="${classMap(btnStyles([26, 62, 98]))}"
                         d="M403 221.12c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M403 221.12c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-27">
+              <a href="#ctrl-${channel}-27"
+                @click="${handleClick({ notes: [27, 63, 99] })}">
                   <path class="${classMap(btnStyles([27, 63, 99]))}"
                         d="M488.25 221.12c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M488.25 221.12c0 3.13 2.54 5.67 5.67 5.67h42.51c3.13 0 5.67-2.54 5.67-5.67v-22.66c0-3.13-2.54-5.67-5.67-5.67h-42.51c-3.13 0-5.67 2.54-5.67 5.67z"></path>
-              <a href="#ctrl-${channel}-12">
+              <a href="#ctrl-${channel}-12"
+                @click="${handleClick({ notes: [12, 16, 20] })}">
                   <path class="${classMap(btnStyles([12, 16, 20]))}"
                         d="M232.5 164.77c0 4.95 4.02 8.97 8.98 8.97h35.89c4.96 0 8.98-4.02 8.98-8.97v-35.9a8.98 8.98 0 0 0-8.98-8.98h-35.89a8.98 8.98 0 0 0-8.98 8.98z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M232.5 164.77c0 4.95 4.02 8.97 8.98 8.97h35.89c4.96 0 8.98-4.02 8.98-8.97v-35.9a8.98 8.98 0 0 0-8.98-8.98h-35.89a8.98 8.98 0 0 0-8.98 8.98z"></path>
-              <a href="#ctrl-${channel}-15">
+              <a href="#ctrl-${channel}-15"
+                @click="${handleClick({ notes: [15, 19, 23] })}">
                   <path class="${classMap(btnStyles([15, 19, 23]))}"
                         d="M488.25 164.77c0 4.95 4.02 8.97 8.98 8.97h35.89c4.96 0 8.98-4.02 8.98-8.97v-35.9a8.98 8.98 0 0 0-8.98-8.98h-35.89a8.98 8.98 0 0 0-8.98 8.98z"></path>
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M488.25 164.77c0 4.95 4.02 8.97 8.98 8.97h35.89c4.96 0 8.98-4.02 8.98-8.97v-35.9a8.98 8.98 0 0 0-8.98-8.98h-35.89a8.98 8.98 0 0 0-8.98 8.98z"></path>
-              <a href="#ctrl-${channel}-20-cc">
+              <a href="#ctrl-${channel}-20-cc"
+                @click="${handleClick({
+                  ccs: [20, 42, 68],
+                  notes: [13, 17, 21],
+                })}">
                   <path class="${classMap(
                     Object.assign(
                       knobStyles([20, 42, 68]),
@@ -449,7 +527,11 @@ export function surface({ channel, selected }) {
               </a>
               <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".5"
                     d="M325.3 145.86c0 10.18 8.25 18.43 18.43 18.43 10.17 0 18.42-8.25 18.42-18.43 0-10.17-8.25-18.42-18.42-18.42-10.18 0-18.43 8.25-18.43 18.42Z"></path>
-              <a href="#ctrl-${channel}-21-cc">
+              <a href="#ctrl-${channel}-21-cc"
+                @click="${handleClick({
+                  ccs: [21, 43, 69],
+                  notes: [14, 18, 22],
+                })}">
                   <path class="${classMap(
                     Object.assign(
                       knobStyles([21, 43, 69]),

@@ -22,15 +22,36 @@ const state = defAtom({
 });
 
 function selectNote(channel, note) {
-  console.log({ event: "select", note, channel });
   state.resetIn("selected", { note, channel });
   return false;
 }
 
 function selectCC(channel, control) {
-  console.log({ event: "select", control, channel });
   state.resetIn("selected", { control, channel });
   return false;
+}
+
+function setFilter(filter) {
+  const notes = new Set(filter.notes);
+  const ccs = new Set(filter.ccs);
+  function selector(x) {
+    const isSameChannel = x["@channel"] === filter.channel;
+    const isSameNote =
+      x["@event_type"] === "Note On" && notes.has(x["@control"]);
+    const isSameCC =
+      x["@event_type"] === "Control Change" && ccs.has(x["@control"]);
+    return isSameChannel && (isSameCC || isSameNote);
+  }
+
+  state.swap((s) =>
+    Object.assign({}, s, {
+      control: s.midi.control.filter((x) => selector(x)),
+    })
+  );
+}
+
+function resetFilter() {
+  state.resetIn("control", null);
 }
 
 function normalizeArray(x) {
@@ -103,7 +124,7 @@ function outputColor({ control, note }) {
 }
 
 function action([key, value]) {
-  return html` <div>${key} ${details(normalizeArray(value))}</div> `;
+  return html`<div>${key} ${details(normalizeArray(value))}</div>`;
 }
 
 function userio(x, signal) {
@@ -183,21 +204,24 @@ function controlDetail(control) {
   `;
 }
 
-function template({ midi, selected }) {
+function template({ control, midi, selected, devices }) {
   return html`
     <div class="canvas">
       <div class="mapping">
-        <h1>My Serato DJ Mapping for two Xone:K2</h1>
-        ${midi.control.map((control) => controlDetail(control))}
+        ${(control ?? midi?.control)?.map((control) => controlDetail(control))}
       </div>
-      <figure>
-        ${surface({ channel: 15, selected })}
-        <figcaption>left</figcaption>
-      </figure>
-      <figure>
-        ${surface({ channel: 14, selected })}
-        <figcaption>right</figcaption>
-      </figure>
+      ${normalizeArray(devices).map(
+        (device) => html`
+          <figure @click=${() => resetFilter()}>
+            ${device.surface({
+              channel: device.channel,
+              selected,
+              onSelection: setFilter,
+            })}
+            <figcaption>${device.caption}</figcaption>
+          </figure>
+        `
+      )}
     </div>
   `;
 }
@@ -209,5 +233,9 @@ function template({ midi, selected }) {
  */
 export async function main({ appRoot }) {
   initRenderLoop(state, appRoot);
+  state.resetIn("devices", [
+    { caption: "left", channel: 15, surface },
+    { caption: "right", channel: 14, surface },
+  ]);
   state.resetIn("midi", data.midi);
 }
