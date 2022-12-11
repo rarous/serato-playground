@@ -55,20 +55,20 @@ export function surface({ channel, selected }) {
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.92 1468.5">
           <style>
               .btn, .cc {
-              fill: var(--grey);
-              fill-rule: evenodd;
+                fill: var(--grey);
+                fill-rule: evenodd;
               }
               .btn.btn--green,
               .cc.cc--green {
-              fill: var(--green);
+                fill: var(--green);
               }
               .btn.btn--orange,
               .cc.cc--orange {
-              fill: var(--orange);
+                fill: var(--orange);
               }
               .btn.btn--red,
               .cc.cc--red {
-              fill: var(--red);
+                fill: var(--red);
               }
           </style>
           <defs>
