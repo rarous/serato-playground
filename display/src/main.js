@@ -122,11 +122,11 @@ function userio(x, signal) {
 
 function conditional(option, signal) {
   return html`
-    <ol>
+    <li>
       ${normalizeArray(option.userio)
         .filter(Boolean)
-        .map((x) => html`<li>${userio(x, signal)}</li>`)}
-    </ol>
+        .map((x) => html`${userio(x, signal)}`)}
+    </li>
   `;
 }
 
@@ -158,9 +158,14 @@ function controlDetail(control) {
       ${normalizeArray(control.userio)
         .filter(Boolean)
         .map((x) => userio(x, signal))}
-      ${normalizeArray(control.case)
-        .filter(Boolean)
-        .map((x) => conditional(x, signal))}
+      ${when(
+        control.case,
+        () => html`
+          <ol>
+            ${control.case.filter(Boolean).map((x) => conditional(x, signal))}
+          </ol>
+        `
+      )}
     </div>
   `;
 }

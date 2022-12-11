@@ -56,6 +56,10 @@ code {
 .control-detail:target {
   background-color: var(--target-color);
 }
+.control-detail :is(ul, ol) {
+  margin: 0;
+  padding: 0 0 0 1em;
+}
 
 .user-io {
   display: flex;
@@ -66,10 +70,6 @@ code {
 .user-io svg {
   width: 12px;
   height: 12px;
-}
-.user-io ul {
-  margin: 0;
-  padding: 0 0 0 1em;
 }
 .user-io--click {}
 .user-io--output {}
