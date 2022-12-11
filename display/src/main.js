@@ -41,8 +41,8 @@ function normalizeArray(x) {
 
 function alias(alias) {
   return html`
-    <code
-      >{${alias.map((x) => `${x["@name"]}: ${x["@value"]}`).join("; ")}}</code
+    <span
+      >{${alias.map((x) => `${x["@name"]}: ${x["@value"]}`).join(", ")}}</span
     >
   `;
 }
@@ -51,11 +51,14 @@ function translation(translation) {
   const { ["@action_on"]: action, ...rest } = translation;
   const keys = Object.keys(rest);
   return html`
-    <code>${action}</code>
+    <span>${action}</span>
     ${keys.map((key) =>
       choose(key, [
         ["alias", () => alias(translation.alias)],
-        ["@static_value", () => html`${translation["@static_value"]}`],
+        [
+          "@static_value",
+          () => html`<span>${translation["@static_value"]}</span>`,
+        ],
       ])
     )}
   `;
@@ -67,8 +70,11 @@ function details(values) {
       ${values.map(
         (details) => html`
           <li>
-            ${details["@deck_set"]} (deck: ${details["@deck_id"]}, slot:
-            ${details["@slot_id"]}) ➡ ${translation(details.translation)}
+            ${details["@deck_set"]}
+            <code
+              >{deck: ${details["@deck_id"]}, slot: ${details["@slot_id"]}} ->
+              ${translation(details.translation)}</code
+            >
           </li>
         `
       )}
@@ -114,6 +120,16 @@ function userio(x, signal) {
   `;
 }
 
+function conditional(option, signal) {
+  return html`
+    <ol>
+      ${normalizeArray(option.userio)
+        .filter(Boolean)
+        .map((x) => html`<li>${userio(x, signal)}</li>`)}
+    </ol>
+  `;
+}
+
 function controlDetail(control) {
   const {
     ["@channel"]: ch,
@@ -123,6 +139,7 @@ function controlDetail(control) {
   const isCC = event === "Control Change";
   const isNote = event === "Note On";
   const key = isCC ? "control" : "note";
+  const signal = { [key]: ctrl };
   return html`
     <div
       id="ctrl-${ch}-${ctrl}${isCC ? "-cc" : ""}"
@@ -140,7 +157,10 @@ function controlDetail(control) {
       </div>
       ${normalizeArray(control.userio)
         .filter(Boolean)
-        .map((x) => userio(x, { [key]: ctrl }))}
+        .map((x) => userio(x, signal))}
+      ${normalizeArray(control.case)
+        .filter(Boolean)
+        .map((x) => conditional(x, signal))}
     </div>
   `;
 }
