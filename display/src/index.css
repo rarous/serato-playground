@@ -114,7 +114,7 @@ figure:last-of-type svg {
 .mapping {
   overflow-y: scroll;
   scroll-behavior: smooth;
-  max-height: 100vh;
+  max-height: calc(100vh - 112px);
 }
 
 .canvas {
