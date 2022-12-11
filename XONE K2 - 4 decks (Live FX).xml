@@ -246,6 +246,21 @@
             </beat_jump>
         </userio>
     </control>
+    <control channel="15" event_type="Note On" control="118">
+        <userio event="click">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="2">
+                <translation action_on="press" behaviour="multi_toggle"/>
+            </effect_bank_channel_assign>
+        </userio>
+        <userio event="output">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="2">
+                <translation action_on="any">
+                    <alias name="on" value="127"/>
+                    <alias name="off" value="0"/>
+                </translation>
+            </effect_bank_channel_assign>
+        </userio>
+    </control>
     <control channel="15" event_type="Note On" control="46">
         <userio event="click">
             <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="2">
@@ -276,6 +291,23 @@
             </cue>
         </userio>
     </control>
+    <control channel="14" event_type="Note On" control="88">
+        <userio event="click">
+            <auto_loop_enable deck_set="Default" deck_id="1" slot_id="0">
+                <translation action_on="press" behaviour="toggle"/>
+            </auto_loop_enable>
+        </userio>
+        <userio event="output">
+            <auto_loop_enable deck_set="Default" deck_id="1" slot_id="0">
+                <translation action_on="any">
+                    <alias name="on" value="127"/>
+                    <alias name="off" value="0"/>
+                    <alias name="trigger" value="0"/>
+                </translation>
+            </auto_loop_enable>
+        </userio>
+    </control>
+
     <control channel="14" event_type="Note On" control="52">
         <userio event="click">
             <auto_loop_enable deck_set="Default" deck_id="1" slot_id="0">
@@ -424,6 +456,21 @@
             </pitch_bend_or_nudge_down>
         </userio>
     </control>
+    <control channel="15" event_type="Note On" control="120">
+        <userio event="click">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="3">
+                <translation action_on="press" behaviour="multi_toggle"/>
+            </effect_bank_channel_assign>
+        </userio>
+        <userio event="output">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="3">
+                <translation action_on="any">
+                    <alias name="on" value="127"/>
+                    <alias name="off" value="0"/>
+                </translation>
+            </effect_bank_channel_assign>
+        </userio>
+    </control>
     <control channel="15" event_type="Note On" control="48">
         <userio event="click">
             <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="3">
@@ -467,6 +514,21 @@
                     <alias name="off" value="0"/>
                 </translation>
             </beat_jump_step>
+        </userio>
+    </control>
+    <control channel="15" event_type="Note On" control="122">
+        <userio event="click">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="2">
+                <translation action_on="press" behaviour="multi_toggle"/>
+            </effect_bank_channel_assign>
+        </userio>
+        <userio event="output">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="2">
+                <translation action_on="any">
+                    <alias name="on" value="127"/>
+                    <alias name="off" value="0"/>
+                </translation>
+            </effect_bank_channel_assign>
         </userio>
     </control>
     <control channel="15" event_type="Note On" control="50">
@@ -674,6 +736,21 @@
             </loop_length_half_double>
         </userio>
     </control>
+    <control channel="15" event_type="Note On" control="119">
+        <userio event="click">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="4">
+                <translation action_on="press" behaviour="multi_toggle"/>
+            </effect_bank_channel_assign>
+        </userio>
+        <userio event="output">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="4">
+                <translation action_on="any">
+                    <alias name="on" value="127"/>
+                    <alias name="off" value="0"/>
+                </translation>
+            </effect_bank_channel_assign>
+        </userio>
+    </control>
     <control channel="15" event_type="Note On" control="47">
         <userio event="click">
             <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="4">
@@ -734,6 +811,21 @@
             </effect_bank_channel_assign>
         </userio>
     </control>
+    <control channel="15" event_type="Note On" control="116">
+        <userio event="click">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="3">
+                <translation action_on="press" behaviour="multi_toggle"/>
+            </effect_bank_channel_assign>
+        </userio>
+        <userio event="output">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="3">
+                <translation action_on="any">
+                    <alias name="on" value="127"/>
+                    <alias name="off" value="0"/>
+                </translation>
+            </effect_bank_channel_assign>
+        </userio>
+    </control>
     <control channel="15" event_type="Note On" control="44">
         <userio event="click">
             <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="3">
@@ -762,21 +854,6 @@
                     <alias name="off" value="0"/>
                 </translation>
             </pitch_bend_or_nudge_down>
-        </userio>
-    </control>
-    <control channel="15" event_type="Note On" control="116">
-        <userio event="click">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="3">
-                <translation action_on="press" behaviour="multi_toggle"/>
-            </effect_bank_channel_assign>
-        </userio>
-        <userio event="output">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="3">
-                <translation action_on="any">
-                    <alias name="on" value="127"/>
-                    <alias name="off" value="0"/>
-                </translation>
-            </effect_bank_channel_assign>
         </userio>
     </control>
     <control channel="15" event_type="Control Change" data_type="Relative 2&apos;s Complement" control="0">
@@ -811,21 +888,6 @@
             </midi_library_scroll>
         </userio>
     </control>
-    <control channel="15" event_type="Note On" control="120">
-        <userio event="click">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="3">
-                <translation action_on="press" behaviour="multi_toggle"/>
-            </effect_bank_channel_assign>
-        </userio>
-        <userio event="output">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="3">
-                <translation action_on="any">
-                    <alias name="on" value="127"/>
-                    <alias name="off" value="0"/>
-                </translation>
-            </effect_bank_channel_assign>
-        </userio>
-    </control>
     <control channel="14" event_type="Control Change" data_type="Relative 2&apos;s Complement" control="0">
         <userio event="click">
             <loop_length_half_double deck_set="Default" deck_id="1" slot_id="0">
@@ -858,6 +920,21 @@
             </userio>
         </case>
     </control>
+    <control channel="15" event_type="Note On" control="123">
+        <userio event="click">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="4">
+                <translation action_on="press" behaviour="multi_toggle"/>
+            </effect_bank_channel_assign>
+        </userio>
+        <userio event="output">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="4">
+                <translation action_on="any">
+                    <alias name="on" value="127"/>
+                    <alias name="off" value="0"/>
+                </translation>
+            </effect_bank_channel_assign>
+        </userio>
+    </control>
     <control channel="15" event_type="Note On" control="51">
         <userio event="click">
             <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="4">
@@ -871,6 +948,22 @@
                     <alias name="off" value="0"/>
                 </translation>
             </effect_bank_channel_assign>
+        </userio>
+    </control>
+    <control channel="15" event_type="Note On" control="88">
+        <userio event="click">
+            <auto_loop_enable deck_set="Default" deck_id="2" slot_id="0">
+                <translation action_on="press" behaviour="toggle"/>
+            </auto_loop_enable>
+        </userio>
+        <userio event="output">
+            <auto_loop_enable deck_set="Default" deck_id="2" slot_id="0">
+                <translation action_on="any">
+                    <alias name="on" value="127"/>
+                    <alias name="off" value="0"/>
+                    <alias name="trigger" value="0"/>
+                </translation>
+            </auto_loop_enable>
         </userio>
     </control>
     <control channel="15" event_type="Note On" control="52">
@@ -1026,6 +1119,21 @@
             </sync>
         </userio>
     </control>
+    <control channel="15" event_type="Note On" control="117">
+        <userio event="click">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="1">
+                <translation action_on="press" behaviour="multi_toggle"/>
+            </effect_bank_channel_assign>
+        </userio>
+        <userio event="output">
+            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="1">
+                <translation action_on="any">
+                    <alias name="on" value="127"/>
+                    <alias name="off" value="0"/>
+                </translation>
+            </effect_bank_channel_assign>
+        </userio>
+    </control>
     <control channel="15" event_type="Note On" control="45">
         <userio event="click">
             <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="1">
@@ -1116,34 +1224,20 @@
             </sync>
         </userio>
     </control>
-    <control channel="15" event_type="Note On" control="123">
+    <control channel="15" event_type="Note On" control="90">
         <userio event="click">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="4">
-                <translation action_on="press" behaviour="multi_toggle"/>
-            </effect_bank_channel_assign>
+            <auto_loop_enable deck_set="Default" deck_id="0" slot_id="0">
+                <translation action_on="press" behaviour="toggle"/>
+            </auto_loop_enable>
         </userio>
         <userio event="output">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="4">
+            <auto_loop_enable deck_set="Default" deck_id="0" slot_id="0">
                 <translation action_on="any">
                     <alias name="on" value="127"/>
                     <alias name="off" value="0"/>
+                    <alias name="trigger" value="0"/>
                 </translation>
-            </effect_bank_channel_assign>
-        </userio>
-    </control>
-    <control channel="15" event_type="Note On" control="119">
-        <userio event="click">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="4">
-                <translation action_on="press" behaviour="multi_toggle"/>
-            </effect_bank_channel_assign>
-        </userio>
-        <userio event="output">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="4">
-                <translation action_on="any">
-                    <alias name="on" value="127"/>
-                    <alias name="off" value="0"/>
-                </translation>
-            </effect_bank_channel_assign>
+            </auto_loop_enable>
         </userio>
     </control>
     <control channel="15" event_type="Note On" control="54">
@@ -1217,6 +1311,22 @@
             </shift_loop>
         </userio>
     </control>
+    <control channel="14" event_type="Note On" control="90">
+        <userio event="click">
+            <auto_loop_enable deck_set="Default" deck_id="3" slot_id="0">
+                <translation action_on="press" behaviour="toggle"/>
+            </auto_loop_enable>
+        </userio>
+        <userio event="output">
+            <auto_loop_enable deck_set="Default" deck_id="3" slot_id="0">
+                <translation action_on="any">
+                    <alias name="on" value="127"/>
+                    <alias name="off" value="0"/>
+                    <alias name="trigger" value="0"/>
+                </translation>
+            </auto_loop_enable>
+        </userio>
+    </control>
     <control channel="14" event_type="Note On" control="54">
         <userio event="click">
             <auto_loop_enable deck_set="Default" deck_id="3" slot_id="0">
@@ -1276,21 +1386,6 @@
                     <alias name="off" value="0"/>
                 </translation>
             </pitch_bend_or_nudge_up>
-        </userio>
-    </control>
-    <control channel="15" event_type="Note On" control="122">
-        <userio event="click">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="2">
-                <translation action_on="press" behaviour="multi_toggle"/>
-            </effect_bank_channel_assign>
-        </userio>
-        <userio event="output">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="2">
-                <translation action_on="any">
-                    <alias name="on" value="127"/>
-                    <alias name="off" value="0"/>
-                </translation>
-            </effect_bank_channel_assign>
         </userio>
     </control>
     <control channel="14" event_type="Note On" control="39">
@@ -1355,21 +1450,6 @@
             </beat_jump>
         </userio>
     </control>
-    <control channel="15" event_type="Note On" control="118">
-        <userio event="click">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="2">
-                <translation action_on="press" behaviour="multi_toggle"/>
-            </effect_bank_channel_assign>
-        </userio>
-        <userio event="output">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="2">
-                <translation action_on="any">
-                    <alias name="on" value="127"/>
-                    <alias name="off" value="0"/>
-                </translation>
-            </effect_bank_channel_assign>
-        </userio>
-    </control>
     <control channel="14" event_type="Note On" control="30">
         <userio event="click">
             <beat_jump_step deck_set="Default" deck_id="3" slot_id="5">
@@ -1423,21 +1503,6 @@
         </userio>
         <userio event="output">
             <effect_bank_channel_assign deck_set="DJ Effects" deck_id="0" slot_id="1">
-                <translation action_on="any">
-                    <alias name="on" value="127"/>
-                    <alias name="off" value="0"/>
-                </translation>
-            </effect_bank_channel_assign>
-        </userio>
-    </control>
-    <control channel="15" event_type="Note On" control="117">
-        <userio event="click">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="1">
-                <translation action_on="press" behaviour="multi_toggle"/>
-            </effect_bank_channel_assign>
-        </userio>
-        <userio event="output">
-            <effect_bank_channel_assign deck_set="DJ Effects" deck_id="1" slot_id="1">
                 <translation action_on="any">
                     <alias name="on" value="127"/>
                     <alias name="off" value="0"/>

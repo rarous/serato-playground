@@ -57,8 +57,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "off", "@value": 0, "#text": null },
-                  { "@name": "on", "@value": 127, "#text": null },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -150,8 +158,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -185,8 +201,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -221,9 +245,21 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "none", "@value": 0, "#text": null },
-                  { "@name": "backward", "@value": 0, "#text": null },
-                  { "@name": "forward", "@value": 127, "#text": null },
+                  {
+                    "@name": "none",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "backward",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "forward",
+                    "@value": 127,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -353,8 +389,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -388,8 +432,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -542,8 +594,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -577,8 +637,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -613,9 +681,64 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "none", "@value": 0, "#text": null },
-                  { "@name": "backward", "@value": 127, "#text": null },
-                  { "@name": "forward", "@value": 0, "#text": null },
+                  {
+                    "@name": "none",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "backward",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "forward",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      },
+      {
+        "@channel": 15,
+        "@event_type": "Note On",
+        "@control": 118,
+        userio: [
+          {
+            "@event": "click",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 1,
+              "@slot_id": 2,
+              translation: {
+                "@action_on": "press",
+                "@behaviour": "multi_toggle",
+                "#text": null,
+              },
+            },
+          },
+          {
+            "@event": "output",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 1,
+              "@slot_id": 2,
+              translation: {
+                "@action_on": "any",
+                alias: [
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -649,8 +772,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -684,8 +815,64 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      },
+      {
+        "@channel": 14,
+        "@event_type": "Note On",
+        "@control": 88,
+        userio: [
+          {
+            "@event": "click",
+            auto_loop_enable: {
+              "@deck_set": "Default",
+              "@deck_id": 1,
+              "@slot_id": 0,
+              translation: {
+                "@action_on": "press",
+                "@behaviour": "toggle",
+                "#text": null,
+              },
+            },
+          },
+          {
+            "@event": "output",
+            auto_loop_enable: {
+              "@deck_set": "Default",
+              "@deck_id": 1,
+              "@slot_id": 0,
+              translation: {
+                "@action_on": "any",
+                alias: [
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "trigger",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -719,9 +906,21 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
-                  { "@name": "trigger", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "trigger",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -755,8 +954,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -790,8 +997,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -891,8 +1106,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "off", "@value": 0, "#text": null },
-                  { "@name": "on", "@value": 127, "#text": null },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -926,8 +1149,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1019,8 +1250,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1054,8 +1293,59 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      },
+      {
+        "@channel": 15,
+        "@event_type": "Note On",
+        "@control": 120,
+        userio: [
+          {
+            "@event": "click",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 0,
+              "@slot_id": 3,
+              translation: {
+                "@action_on": "press",
+                "@behaviour": "multi_toggle",
+                "#text": null,
+              },
+            },
+          },
+          {
+            "@event": "output",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 0,
+              "@slot_id": 3,
+              translation: {
+                "@action_on": "any",
+                alias: [
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1089,8 +1379,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1124,8 +1422,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1159,8 +1465,59 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      },
+      {
+        "@channel": 15,
+        "@event_type": "Note On",
+        "@control": 122,
+        userio: [
+          {
+            "@event": "click",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 0,
+              "@slot_id": 2,
+              translation: {
+                "@action_on": "press",
+                "@behaviour": "multi_toggle",
+                "#text": null,
+              },
+            },
+          },
+          {
+            "@event": "output",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 0,
+              "@slot_id": 2,
+              translation: {
+                "@action_on": "any",
+                alias: [
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1194,8 +1551,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1315,8 +1680,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1351,9 +1724,21 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "none", "@value": 0, "#text": null },
-                  { "@name": "backward", "@value": 127, "#text": null },
-                  { "@name": "forward", "@value": 0, "#text": null },
+                  {
+                    "@name": "none",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "backward",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "forward",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1387,8 +1772,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1451,9 +1844,21 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "none", "@value": 0, "#text": null },
-                  { "@name": "backward", "@value": 0, "#text": null },
-                  { "@name": "forward", "@value": 127, "#text": null },
+                  {
+                    "@name": "none",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "backward",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "forward",
+                    "@value": 127,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1487,8 +1892,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1522,8 +1935,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1558,9 +1979,21 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "none", "@value": 0, "#text": null },
-                  { "@name": "backward", "@value": 127, "#text": null },
-                  { "@name": "forward", "@value": 0, "#text": null },
+                  {
+                    "@name": "none",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "backward",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "forward",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1594,8 +2027,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1629,8 +2070,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1673,6 +2122,49 @@ export const data = {
       {
         "@channel": 15,
         "@event_type": "Note On",
+        "@control": 119,
+        userio: [
+          {
+            "@event": "click",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 1,
+              "@slot_id": 4,
+              translation: {
+                "@action_on": "press",
+                "@behaviour": "multi_toggle",
+                "#text": null,
+              },
+            },
+          },
+          {
+            "@event": "output",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 1,
+              "@slot_id": 4,
+              translation: {
+                "@action_on": "any",
+                alias: [
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      },
+      {
+        "@channel": 15,
+        "@event_type": "Note On",
         "@control": 47,
         userio: [
           {
@@ -1697,8 +2189,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1732,8 +2232,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1767,8 +2275,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1802,78 +2318,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
-                ],
-              },
-            },
-          },
-        ],
-      },
-      {
-        "@channel": 15,
-        "@event_type": "Note On",
-        "@control": 44,
-        userio: [
-          {
-            "@event": "click",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
-              "@deck_id": 1,
-              "@slot_id": 3,
-              translation: {
-                "@action_on": "press",
-                "@behaviour": "multi_toggle",
-                "#text": null,
-              },
-            },
-          },
-          {
-            "@event": "output",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
-              "@deck_id": 1,
-              "@slot_id": 3,
-              translation: {
-                "@action_on": "any",
-                alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
-                ],
-              },
-            },
-          },
-        ],
-      },
-      {
-        "@channel": 14,
-        "@event_type": "Note On",
-        "@control": 38,
-        userio: [
-          {
-            "@event": "click",
-            pitch_bend_down: {
-              "@deck_set": "Default",
-              "@deck_id": 3,
-              "@slot_id": 0,
-              translation: {
-                "@action_on": "any",
-                "@behaviour": "explicit",
-                "#text": null,
-              },
-            },
-          },
-          {
-            "@event": "output",
-            pitch_bend_or_nudge_down: {
-              "@deck_set": "Default",
-              "@deck_id": 3,
-              "@slot_id": 0,
-              translation: {
-                "@action_on": "any",
-                alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1907,8 +2361,102 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      },
+      {
+        "@channel": 15,
+        "@event_type": "Note On",
+        "@control": 44,
+        userio: [
+          {
+            "@event": "click",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 1,
+              "@slot_id": 3,
+              translation: {
+                "@action_on": "press",
+                "@behaviour": "multi_toggle",
+                "#text": null,
+              },
+            },
+          },
+          {
+            "@event": "output",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 1,
+              "@slot_id": 3,
+              translation: {
+                "@action_on": "any",
+                alias: [
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      },
+      {
+        "@channel": 14,
+        "@event_type": "Note On",
+        "@control": 38,
+        userio: [
+          {
+            "@event": "click",
+            pitch_bend_down: {
+              "@deck_set": "Default",
+              "@deck_id": 3,
+              "@slot_id": 0,
+              translation: {
+                "@action_on": "any",
+                "@behaviour": "explicit",
+                "#text": null,
+              },
+            },
+          },
+          {
+            "@event": "output",
+            pitch_bend_or_nudge_down: {
+              "@deck_set": "Default",
+              "@deck_id": 3,
+              "@slot_id": 0,
+              translation: {
+                "@action_on": "any",
+                alias: [
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -1975,8 +2523,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2001,41 +2557,6 @@ export const data = {
             },
           },
         },
-      },
-      {
-        "@channel": 15,
-        "@event_type": "Note On",
-        "@control": 120,
-        userio: [
-          {
-            "@event": "click",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
-              "@deck_id": 0,
-              "@slot_id": 3,
-              translation: {
-                "@action_on": "press",
-                "@behaviour": "multi_toggle",
-                "#text": null,
-              },
-            },
-          },
-          {
-            "@event": "output",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
-              "@deck_id": 0,
-              "@slot_id": 3,
-              translation: {
-                "@action_on": "any",
-                alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
-                ],
-              },
-            },
-          },
-        ],
       },
       {
         "@channel": 14,
@@ -2130,6 +2651,49 @@ export const data = {
       {
         "@channel": 15,
         "@event_type": "Note On",
+        "@control": 123,
+        userio: [
+          {
+            "@event": "click",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 0,
+              "@slot_id": 4,
+              translation: {
+                "@action_on": "press",
+                "@behaviour": "multi_toggle",
+                "#text": null,
+              },
+            },
+          },
+          {
+            "@event": "output",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 0,
+              "@slot_id": 4,
+              translation: {
+                "@action_on": "any",
+                alias: [
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      },
+      {
+        "@channel": 15,
+        "@event_type": "Note On",
         "@control": 51,
         userio: [
           {
@@ -2154,8 +2718,64 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      },
+      {
+        "@channel": 15,
+        "@event_type": "Note On",
+        "@control": 88,
+        userio: [
+          {
+            "@event": "click",
+            auto_loop_enable: {
+              "@deck_set": "Default",
+              "@deck_id": 2,
+              "@slot_id": 0,
+              translation: {
+                "@action_on": "press",
+                "@behaviour": "toggle",
+                "#text": null,
+              },
+            },
+          },
+          {
+            "@event": "output",
+            auto_loop_enable: {
+              "@deck_set": "Default",
+              "@deck_id": 2,
+              "@slot_id": 0,
+              translation: {
+                "@action_on": "any",
+                alias: [
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "trigger",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2189,9 +2809,21 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
-                  { "@name": "trigger", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "trigger",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2225,8 +2857,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2260,8 +2900,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2333,8 +2981,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2368,8 +3024,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2456,9 +3120,21 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "none", "@value": 0, "#text": null },
-                  { "@name": "backward", "@value": 0, "#text": null },
-                  { "@name": "forward", "@value": 127, "#text": null },
+                  {
+                    "@name": "none",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "backward",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "forward",
+                    "@value": 127,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2492,8 +3168,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2527,8 +3211,59 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      },
+      {
+        "@channel": 15,
+        "@event_type": "Note On",
+        "@control": 117,
+        userio: [
+          {
+            "@event": "click",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 1,
+              "@slot_id": 1,
+              translation: {
+                "@action_on": "press",
+                "@behaviour": "multi_toggle",
+                "#text": null,
+              },
+            },
+          },
+          {
+            "@event": "output",
+            effect_bank_channel_assign: {
+              "@deck_set": "DJ Effects",
+              "@deck_id": 1,
+              "@slot_id": 1,
+              translation: {
+                "@action_on": "any",
+                alias: [
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2562,8 +3297,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2597,8 +3340,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2632,8 +3383,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2667,8 +3426,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2702,8 +3469,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2737,8 +3512,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2748,67 +3531,45 @@ export const data = {
       {
         "@channel": 15,
         "@event_type": "Note On",
-        "@control": 123,
+        "@control": 90,
         userio: [
           {
             "@event": "click",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
+            auto_loop_enable: {
+              "@deck_set": "Default",
               "@deck_id": 0,
-              "@slot_id": 4,
+              "@slot_id": 0,
               translation: {
                 "@action_on": "press",
-                "@behaviour": "multi_toggle",
+                "@behaviour": "toggle",
                 "#text": null,
               },
             },
           },
           {
             "@event": "output",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
+            auto_loop_enable: {
+              "@deck_set": "Default",
               "@deck_id": 0,
-              "@slot_id": 4,
+              "@slot_id": 0,
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
-                ],
-              },
-            },
-          },
-        ],
-      },
-      {
-        "@channel": 15,
-        "@event_type": "Note On",
-        "@control": 119,
-        userio: [
-          {
-            "@event": "click",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
-              "@deck_id": 1,
-              "@slot_id": 4,
-              translation: {
-                "@action_on": "press",
-                "@behaviour": "multi_toggle",
-                "#text": null,
-              },
-            },
-          },
-          {
-            "@event": "output",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
-              "@deck_id": 1,
-              "@slot_id": 4,
-              translation: {
-                "@action_on": "any",
-                alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "trigger",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2842,9 +3603,21 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
-                  { "@name": "trigger", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "trigger",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2878,8 +3651,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "off", "@value": 0, "#text": null },
-                  { "@name": "on", "@value": 127, "#text": null },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2913,8 +3694,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2948,8 +3737,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "off", "@value": 0, "#text": null },
-                  { "@name": "on", "@value": 127, "#text": null },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -2992,6 +3789,54 @@ export const data = {
       {
         "@channel": 14,
         "@event_type": "Note On",
+        "@control": 90,
+        userio: [
+          {
+            "@event": "click",
+            auto_loop_enable: {
+              "@deck_set": "Default",
+              "@deck_id": 3,
+              "@slot_id": 0,
+              translation: {
+                "@action_on": "press",
+                "@behaviour": "toggle",
+                "#text": null,
+              },
+            },
+          },
+          {
+            "@event": "output",
+            auto_loop_enable: {
+              "@deck_set": "Default",
+              "@deck_id": 3,
+              "@slot_id": 0,
+              translation: {
+                "@action_on": "any",
+                alias: [
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "trigger",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      },
+      {
+        "@channel": 14,
+        "@event_type": "Note On",
         "@control": 54,
         userio: [
           {
@@ -3016,9 +3861,21 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
-                  { "@name": "trigger", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "trigger",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -3052,8 +3909,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -3087,8 +3952,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -3122,43 +3995,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
-                ],
-              },
-            },
-          },
-        ],
-      },
-      {
-        "@channel": 15,
-        "@event_type": "Note On",
-        "@control": 122,
-        userio: [
-          {
-            "@event": "click",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
-              "@deck_id": 0,
-              "@slot_id": 2,
-              translation: {
-                "@action_on": "press",
-                "@behaviour": "multi_toggle",
-                "#text": null,
-              },
-            },
-          },
-          {
-            "@event": "output",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
-              "@deck_id": 0,
-              "@slot_id": 2,
-              translation: {
-                "@action_on": "any",
-                alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -3192,8 +4038,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -3227,8 +4081,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -3263,9 +4125,21 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "none", "@value": 0, "#text": null },
-                  { "@name": "backward", "@value": 0, "#text": null },
-                  { "@name": "forward", "@value": 127, "#text": null },
+                  {
+                    "@name": "none",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "backward",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "forward",
+                    "@value": 127,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -3300,44 +4174,21 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "none", "@value": 0, "#text": null },
-                  { "@name": "backward", "@value": 127, "#text": null },
-                  { "@name": "forward", "@value": 0, "#text": null },
-                ],
-              },
-            },
-          },
-        ],
-      },
-      {
-        "@channel": 15,
-        "@event_type": "Note On",
-        "@control": 118,
-        userio: [
-          {
-            "@event": "click",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
-              "@deck_id": 1,
-              "@slot_id": 2,
-              translation: {
-                "@action_on": "press",
-                "@behaviour": "multi_toggle",
-                "#text": null,
-              },
-            },
-          },
-          {
-            "@event": "output",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
-              "@deck_id": 1,
-              "@slot_id": 2,
-              translation: {
-                "@action_on": "any",
-                alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "none",
+                    "@value": 0,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "backward",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "forward",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -3371,8 +4222,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -3406,8 +4265,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -3441,8 +4308,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
@@ -3476,43 +4351,16 @@ export const data = {
               translation: {
                 "@action_on": "any",
                 alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
-                ],
-              },
-            },
-          },
-        ],
-      },
-      {
-        "@channel": 15,
-        "@event_type": "Note On",
-        "@control": 117,
-        userio: [
-          {
-            "@event": "click",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
-              "@deck_id": 1,
-              "@slot_id": 1,
-              translation: {
-                "@action_on": "press",
-                "@behaviour": "multi_toggle",
-                "#text": null,
-              },
-            },
-          },
-          {
-            "@event": "output",
-            effect_bank_channel_assign: {
-              "@deck_set": "DJ Effects",
-              "@deck_id": 1,
-              "@slot_id": 1,
-              translation: {
-                "@action_on": "any",
-                alias: [
-                  { "@name": "on", "@value": 127, "#text": null },
-                  { "@name": "off", "@value": 0, "#text": null },
+                  {
+                    "@name": "on",
+                    "@value": 127,
+                    "#text": null,
+                  },
+                  {
+                    "@name": "off",
+                    "@value": 0,
+                    "#text": null,
+                  },
                 ],
               },
             },
