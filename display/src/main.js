@@ -72,8 +72,11 @@ function details(values) {
           <li>
             ${details["@deck_set"]}
             <code
-              >{deck: ${details["@deck_id"]}, slot: ${details["@slot_id"]}} ->
-              ${translation(details.translation)}</code
+              >{deck: ${details["@deck_id"]}, slot: ${details["@slot_id"]}}
+              ${when(
+                details.translation,
+                () => html`-> ${translation(details.translation)}`
+              )}</code
             >
           </li>
         `
@@ -121,8 +124,18 @@ function userio(x, signal) {
 }
 
 function conditional(option, signal) {
+  const actions = Object.entries(option.condition);
   return html`
     <li>
+      ${actions.map(
+        ([key, value]) => html`
+          <span>${value["@deck_set"]}</span>
+          <code>{deck: ${value["@deck_id"]}, slot: ${value["@slot_id"]}} </code>
+          <code
+            >${key} ${value["@operator"]} <b>${value["@cmp_value"]}</b></code
+          >
+        `
+      )}
       ${normalizeArray(option.userio)
         .filter(Boolean)
         .map((x) => html`${userio(x, signal)}`)}
