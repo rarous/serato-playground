@@ -241,7 +241,7 @@ function template({ control, midi, selected, devices, routing }) {
         ${when(
           routing.length,
           () => html`
-            <h2>Available mapping</h2>
+            <h2>Available mappings</h2>
             ${routing.map((control) => controlDetail(control))}
           `
         )}
