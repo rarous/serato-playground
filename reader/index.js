@@ -1,6 +1,14 @@
+import { serve } from "https://deno.land/std@0.155.0/http/server.ts";
 import { parse } from "https://deno.land/x/xml/mod.ts";
 
-const text = await Deno.readTextFile("../XONE K2 - 4 decks (Live FX).xml");
-const xml = parse(text);
+/**
+ * @param {Request} req
+ * @return {Promise<Response>}
+ */
+export async function handler(req) {
+  const text = await req.text();
+  const xml = parse(text);
+  return Response.json(xml);
+}
 
-console.log(JSON.stringify(xml, null, 2));
+serve(handler);
