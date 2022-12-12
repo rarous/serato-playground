@@ -1,4 +1,4 @@
-import { defAtom } from "@thi.ng/atom";
+import { beginTransaction, defAtom } from "@thi.ng/atom";
 import { html } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 import { choose } from "lit/directives/choose.js";
@@ -18,7 +18,9 @@ import {
 const state = defAtom({
   view: template,
   midi: null,
+  control: null,
   selected: { control: null, channel: null, note: null },
+  routing: [],
 });
 
 function selectNote(channel, note) {
@@ -43,6 +45,24 @@ function setFilter(filter) {
     return isSameChannel && (isSameCC || isSameNote);
   }
 
+  const routing = [];
+  for (const note of notes) {
+    routing.push({
+      "@channel": filter.channel,
+      "@event_type": "Note On",
+      "@control": note,
+      userio: { "@event": "output", any: [] },
+    });
+  }
+  for (const cc of ccs) {
+    routing.push({
+      "@channel": filter.channel,
+      "@event_type": "Control Change",
+      "@control": cc,
+      userio: { "@event": "output", any: [] },
+    });
+  }
+
   state.swap((s) =>
     Object.assign({}, s, {
       control: s.midi.control.filter((x) => selector(x)),
@@ -51,12 +71,16 @@ function setFilter(filter) {
         note: filter.notes?.[0],
         control: filter.ccs?.[0],
       },
+      routing,
     })
   );
 }
 
 function resetFilter() {
-  state.resetIn("control", null);
+  const t = beginTransaction(state);
+  t.resetIn("control", null);
+  t.resetIn("routing", []);
+  t.commit();
 }
 
 function normalizeArray(x) {
@@ -209,11 +233,18 @@ function controlDetail(control) {
   `;
 }
 
-function template({ control, midi, selected, devices }) {
+function template({ control, midi, selected, devices, routing }) {
   return html`
     <div class="canvas">
       <div class="mapping">
         ${(control ?? midi?.control)?.map((control) => controlDetail(control))}
+        ${when(
+          routing.length,
+          () => html`
+            <h2>Available mapping</h2>
+            ${routing.map((control) => controlDetail(control))}
+          `
+        )}
       </div>
       ${normalizeArray(devices).map(
         (device) => html`
@@ -238,9 +269,11 @@ function template({ control, midi, selected, devices }) {
  */
 export async function main({ appRoot }) {
   initRenderLoop(state, appRoot);
-  state.resetIn("devices", [
+  const t = beginTransaction(state);
+  t.resetIn("devices", [
     { caption: "left", channel: 15, surface },
     { caption: "right", channel: 14, surface },
   ]);
-  state.resetIn("midi", data.midi);
+  t.resetIn("midi", data.midi);
+  t.commit();
 }
