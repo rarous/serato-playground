@@ -5,18 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Serato Mapping</title>
     <link rel="stylesheet" href="index.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="https://m.cdn.sera.to/favicon-32.ico">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://m.cdn.sera.to/favicon-32.ico"
+    />
   </head>
   <body>
     <h1>My Serato DJ Mapping for two Xone:K2</h1>
-    <p>Click on any line will highlight related control. Click on control will filter related lines. Click anywhere else to reset filter.</p>
+    <p>
+      Click on any line will highlight related control. Click on control will
+      filter related lines. Click anywhere else to reset filter.
+    </p>
     <div id="app-root"></div>
+    <p>
+      © 2022 Aleš Roubíček. Published under
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"
+        >CC 4.0 BY-SA</a
+      >
+      license.
+      <a href="https://github.com/rarous/serato-playground"
+        >Source code on Github</a
+      >
+    </p>
     <script type="module">
       import { main } from "./main.js";
 
-      await main({
-        appRoot: document.getElementById("app-root"),
-      });
+      await main({ appRoot: document.getElementById("app-root") });
     </script>
     <div style="display: none">
       <svg xmlns="http://www.w3.org/2000/svg">
