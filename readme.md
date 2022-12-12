@@ -14,3 +14,5 @@ Serato UI doesn't help much, there is nothing like [Ableton Live Mapping Browser
 
 * [reader](reader) - deno script to convert source XML to JS representation (`cd reader; deno run --allow-read index.js | pbcopy`)
 * [display](display) - web frontend for visualisation of Serato XML data. (`cd display; yarn; yarn dev`)
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
