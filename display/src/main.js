@@ -46,6 +46,11 @@ function setFilter(filter) {
   state.swap((s) =>
     Object.assign({}, s, {
       control: s.midi.control.filter((x) => selector(x)),
+      selected: {
+        channel: filter.channel,
+        note: filter.notes?.[0],
+        control: filter.ccs?.[0],
+      },
     })
   );
 }
