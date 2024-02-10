@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@thi.ng/atom": "^5.1.24",
-    "lit": "^2.4.0"
+    "lit": "^3.0.0"
   },
   "devDependencies": {
     "@dblechoc/plugin-lit-refresh": "^0.0.6",
