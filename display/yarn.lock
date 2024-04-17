@@ -3,7 +3,7 @@
 
 __metadata:
   version: 8
-  cacheKey: 10
+  cacheKey: 10c0
 
 "@dblechoc/plugin-lit-refresh@npm:^0.0.6":
   version: 0.0.6
@@ -926,13 +926,13 @@ __metadata:
   linkType: hard
 
 "lit@npm:^3.0.0":
-  version: 3.1.2
-  resolution: "lit@npm:3.1.2"
+  version: 3.1.3
+  resolution: "lit@npm:3.1.3"
   dependencies:
     "@lit/reactive-element": "npm:^2.0.4"
     lit-element: "npm:^4.0.4"
     lit-html: "npm:^3.1.2"
-  checksum: 8/7776fc5f17a093aafa8d2194725692be2e233d893909722e2fc86ef0bd167f60846fa24054bbca40028bb71262dfa12947e39cb46ad1d0f949dbf0298c7754d1
+  checksum: 10c0/bd29503bed86e07d94ff3445da4ac11b883bd94d50a2c8a089e990cbd3ce91c06f0e177cce38fbc75ddb35eb6e44f2ee5a1f7b8613478d522eff11438ebb858f
   languageName: node
   linkType: hard
 
