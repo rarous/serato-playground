@@ -239,7 +239,7 @@ __metadata:
     "@dblechoc/plugin-lit-refresh": "npm:^0.0.6"
     "@thi.ng/atom": "npm:^5.1.24"
     lit: "npm:^3.0.0"
-    prettier: "npm:^2.8.1"
+    prettier: "npm:^3.0.0"
     vite: "npm:^6.0.0"
   languageName: unknown
   linkType: soft
@@ -1260,12 +1260,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.8.1":
-  version: 2.8.1
-  resolution: "prettier@npm:2.8.1"
+"prettier@npm:^3.0.0":
+  version: 3.6.2
+  resolution: "prettier@npm:3.6.2"
   bin:
-    prettier: bin-prettier.js
-  checksum: 8/4f21a0f1269f76fb36f54e9a8a1ea4c11e27478958bf860661fb4b6d7ac69aac1581f8724fa98ea3585e56d42a2ea317a17ff6e3324f40cb11ff9e20b73785cc
+    prettier: bin/prettier.cjs
+  checksum: 10c0/488cb2f2b99ec13da1e50074912870217c11edaddedeadc649b1244c749d15ba94e846423d062e2c4c9ae683e2d65f754de28889ba06e697ac4f988d44f45812
   languageName: node
   linkType: hard
 
