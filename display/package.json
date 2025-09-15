@@ -15,13 +15,13 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@thi.ng/atom": "^5.1.24",
-    "lit": "^3.0.0"
+    "@libs/xml": "jsr:7.0.2",
+    "@thi.ng/atom": "5.3.42",
+    "lit": "3.3.1"
   },
   "devDependencies": {
-    "@dblechoc/plugin-lit-refresh": "^0.0.6",
-    "prettier": "^2.8.1",
-    "vite": "^6.0.0"
+    "@dblechoc/plugin-lit-refresh": "0.0.6",
+    "vite": "7.1.5"
   },
   "packageManager": "yarn@4.9.4"
 }
