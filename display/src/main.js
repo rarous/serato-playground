@@ -39,9 +39,9 @@ function setFilter(filter) {
   function selector(x) {
     const isSameChannel = x["@channel"] === filter.channel;
     const isSameNote =
-      x["@event_type"] === "Note On" && notes.has(x["@control"]);
+      x["@event_type"] === "Note On" && notes.has(Number.parseInt(x["@control"]));
     const isSameCC =
-      x["@event_type"] === "Control Change" && ccs.has(x["@control"]);
+      x["@event_type"] === "Control Change" && ccs.has(Number.parseInt(x["@control"]));
     return isSameChannel && (isSameCC || isSameNote);
   }
 
@@ -194,11 +194,9 @@ function conditional(option, signal) {
 }
 
 function controlDetail(control) {
-  const {
-    ["@channel"]: ch,
-    ["@control"]: ctrl,
-    ["@event_type"]: event,
-  } = control;
+  const { ["@event_type"]: event, } = control;
+  const ch = Number.parseInt(control["@channel"]);
+  const ctrl = Number.parseInt(control["@control"]);
   const isCC = event === "Control Change";
   const isNote = event === "Note On";
   const key = isCC ? "control" : "note";
