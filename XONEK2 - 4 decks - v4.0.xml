@@ -1547,4 +1547,40 @@
             </play>
         </userio>
     </control>
+    <control channel="13" event_type="Note On" control="7">
+        <userio event="click">
+            <layout_mode deck_set="Default" deck_id="0" slot_id="0">
+                <translation action_on="press" behaviour="toggle">
+                    <alias name="Stack" value="0"/>
+                    <alias name="Stack" value="127"/>
+                </translation>
+            </layout_mode>
+            <quantize deck_set="Default" deck_id="0" slot_id="0">
+                <translation action_on="press" behaviour="toggle"/>
+            </quantize>
+            <quantize deck_set="Default" deck_id="1" slot_id="0">
+                <translation action_on="press" behaviour="toggle"/>
+            </quantize>
+            <quantize deck_set="Default" deck_id="2" slot_id="0">
+                <translation action_on="press" behaviour="toggle"/>
+            </quantize>
+            <quantize deck_set="Default" deck_id="3" slot_id="0">
+                <translation action_on="press" behaviour="toggle"/>
+            </quantize>
+            <widget_mode deck_set="Default" deck_id="0" slot_id="4">
+                <translation action_on="press" behaviour="toggle"/>
+            </widget_mode>
+            <widget_mode deck_set="Default" deck_id="0" slot_id="3">
+                <translation action_on="press" behaviour="toggle"/>
+            </widget_mode>
+        </userio>
+        <userio event="output">
+            <widget_mode deck_set="Default" deck_id="0" slot_id="3">
+                <translation action_on="any">
+                    <alias name="off" value="0"/>
+                    <alias name="on" value="127"/>
+                </translation>
+            </widget_mode>
+        </userio>
+    </control>
 </midi>
