@@ -145,3 +145,50 @@
 </userio>
 </case>
 ```
+
+### Light switching for beat step
+
+```xml
+
+  <control channel="15" event_type="Note On" control="100">
+    <case>
+      <condition>
+        <beat_jump_step deck_set="Default" deck_id="2" slot_id="8" operator="equal" cmp_value="on"/>
+      </condition>
+      <userio event="output">
+        <beat_jump_step deck_set="Default" deck_id="2" slot_id="8">
+          <translation action_on="any">
+            <alias name="on" value="127"/>
+            <alias name="off" value="0"/>
+          </translation>
+        </beat_jump_step>
+      </userio>
+    </case>
+    <case>
+      <condition>
+        <beat_jump_step deck_set="Default" deck_id="2" slot_id="9" operator="equal" cmp_value="on"/>
+      </condition>
+      <userio event="output">
+        <beat_jump_step deck_set="Default" deck_id="2" slot_id="10">
+          <translation action_on="any">
+            <alias name="on" value="127"/>
+            <alias name="off" value="0"/>
+          </translation>
+        </beat_jump_step>
+      </userio>
+    </case>
+    <case>
+      <condition>
+        <beat_jump_step deck_set="Default" deck_id="2" slot_id="10" operator="equal" cmp_value="on"/>
+      </condition>
+      <userio event="output">
+        <beat_jump_step deck_set="Default" deck_id="2" slot_id="10">
+          <translation action_on="any">
+            <alias name="on" value="127"/>
+            <alias name="off" value="0"/>
+          </translation>
+        </beat_jump_step>
+      </userio>
+    </case>
+  </control>
+```
