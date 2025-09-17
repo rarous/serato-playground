@@ -275,3 +275,16 @@ export async function main({ appRoot }) {
   t.resetIn("midi", data.midi);
   t.commit();
 }
+
+window.exportXML = async function () {
+  const { midi } = state.deref();
+  const resp = await fetch("/reader?download", {
+    method: "POST",
+    headers: {
+      "Accept": "text/xml",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(midi),
+  });
+  console.log(resp.ok);
+}
