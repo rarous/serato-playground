@@ -1,4 +1,3 @@
-import { serve } from "jsr:@std/http";
 import { parse } from "jsr:@libs/xml";
 
 /**
@@ -11,4 +10,4 @@ export async function handler(req) {
   return Response.json(xml);
 }
 
-serve(handler);
+Deno.serve(handler);
