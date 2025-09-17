@@ -279,7 +279,7 @@ export async function main({ appRoot }) {
 
 window.exportXML = async function () {
   const { midi } = state.deref();
-  const resp = await fetch("/reader?download", {
+  const resp = await fetch("/reader", {
     method: "POST",
     headers: {
       "Accept": "text/xml",
@@ -287,5 +287,12 @@ window.exportXML = async function () {
     },
     body: JSON.stringify({ midi }),
   });
-  console.log(resp.ok);
+  const blob = await resp.blob();
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "My Mapping.xml";
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
 }
