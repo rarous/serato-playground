@@ -2,7 +2,7 @@ import { parse, stringify } from "jsr:@libs/xml";
 import { fromJS, isKeyed } from "npm:immutable";
 
 function dedupe(xs) {
-  return fromJS(xs, (k,v,p) => isKeyed(v) ? v.toOrderedMap() : v.toSet()).toJS()
+  return fromJS(xs, (k, v, p) => isKeyed(v) ? v.toOrderedMap() : v.toOrderedSet()).toJS();
 }
 
 async function readPayload(req) {
