@@ -133,3 +133,9 @@ figure:last-of-type svg {
   margin: 8px;
   font-size: 75%;
 }
+
+#export {
+  appearance: none;
+  border: none;
+  background: transparent;
+}
