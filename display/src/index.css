@@ -5,9 +5,8 @@
 }
 
 :root {
-  font-family:  "Innovator Grotesk", Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  line-height: 24px;
+  font-family: "Innovator Grotesk", Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 100%;
   font-weight: 400;
 
   color-scheme: light dark;
@@ -18,7 +17,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 
   --green: #9fff7f;
   --orange: #ffbf7f;
@@ -130,4 +131,5 @@ figure:last-of-type svg {
   gap: 16px;
   width: calc(100% - 16px);
   margin: 8px;
+  font-size: 75%;
 }
