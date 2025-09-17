@@ -1,5 +1,11 @@
+@font-face {
+    font-family: "Innovator Grotesk";
+    src: url("/assets/innovator-grotesk/variable.woff2") format("woff2");
+    font-display: swap;
+}
+
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family:  "Innovator Grotesk", Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
