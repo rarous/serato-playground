@@ -1,19 +1,11 @@
 import { beginTransaction, defAtom } from "@thi.ng/atom";
 import { html } from "lit";
-import { classMap } from "lit/directives/class-map.js";
 import { choose } from "lit/directives/choose.js";
+import { classMap } from "lit/directives/class-map.js";
 import { when } from "lit/directives/when.js";
 import { data } from "./mapping.js";
 import { initRenderLoop } from "./renderer.js";
-import {
-  greenBtns,
-  greenCCs,
-  orangeBtns,
-  orangeCCs,
-  redBtns,
-  redCCs,
-  surface,
-} from "./xone-k2.js";
+import { greenBtns, greenCCs, orangeBtns, orangeCCs, redBtns, redCCs, surface, } from "./xone-k2.js";
 
 const state = defAtom({
   view: template,
@@ -266,7 +258,7 @@ function template({ control, midi, selected, devices, routing }) {
  * @param {HTMLElement} appRoot
  * @return {Promise<void>}
  */
-export async function main({ appRoot }) {
+export async function main({ appRoot, exportBtn }) {
   initRenderLoop(state, appRoot);
   const t = beginTransaction(state);
   t.resetIn("devices", [
@@ -275,22 +267,23 @@ export async function main({ appRoot }) {
   ]);
   t.resetIn("midi", data.midi);
   t.commit();
+
+  exportBtn?.addEventListener("click", async function () {
+    const { midi } = state.deref();
+    const resp = await fetch("/reader", {
+      method: "POST",
+      headers: {
+        "Accept": "text/xml",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ midi }),
+    });
+    const blob = await resp.blob();
+    const url = URL.createObjectURL(blob);
+    const a = Object.assign(document.createElement("a"), { href: url, download: "My Mapping.xml" });
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
 }
 
-window.exportXML = async function () {
-  const { midi } = state.deref();
-  const resp = await fetch("/reader", {
-    method: "POST",
-    headers: {
-      "Accept": "text/xml",
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ midi }),
-  });
-  const blob = await resp.blob();
-  const url = URL.createObjectURL(blob);
-  const a = Object.assign(document.createElement("a"), { href: url, download: "My Mapping.xml" });
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-}
