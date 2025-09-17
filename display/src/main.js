@@ -36,6 +36,7 @@ function selectCC(channel, control) {
 function setFilter(filter) {
   const notes = new Set(filter.notes);
   const ccs = new Set(filter.ccs);
+
   function selector(x) {
     const isSameChannel = x["@channel"] === filter.channel;
     const isSameNote =
@@ -284,7 +285,7 @@ window.exportXML = async function () {
       "Accept": "text/xml",
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(midi),
+    body: JSON.stringify({ midi }),
   });
   console.log(resp.ok);
 }
