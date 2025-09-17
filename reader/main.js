@@ -2,7 +2,7 @@ import { parseArgs } from "jsr:@std/cli/parse-args";
 
 async function main({ file }) {
   const text = await Deno.readTextFile(file);
-  const resp = await fetch("https://serato.rarousmusic.com/xml-to-json", {
+  const resp = await fetch("https://serato.rarousmusic.com/reader", {
     method: "POST",
     headers: {
       "Content-Type": "text/xml",
