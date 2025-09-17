@@ -1,5 +1,5 @@
-import { serve } from "https://deno.land/std@0.155.0/http/server.ts";
-import { parse } from "https://deno.land/x/xml/mod.ts";
+import { serve } from "jsr:@std/http";
+import { parse } from "jsr:@libs/xml";
 
 /**
  * @param {Request} req
