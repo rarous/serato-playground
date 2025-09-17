@@ -289,9 +289,7 @@ window.exportXML = async function () {
   });
   const blob = await resp.blob();
   const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "My Mapping.xml";
+  const a = Object.assign(document.createElement("a"), { href: url, download: "My Mapping.xml" });
   a.click();
   a.remove();
   URL.revokeObjectURL(url);
