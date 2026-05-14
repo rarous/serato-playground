@@ -17,7 +17,7 @@
   "dependencies": {
     "@libs/xml": "jsr:7.0.2",
     "@thi.ng/atom": "5.3.42",
-    "lit": "3.3.1"
+    "lit": "3.3.3"
   },
   "devDependencies": {
     "@dblechoc/plugin-lit-refresh": "0.0.6",
