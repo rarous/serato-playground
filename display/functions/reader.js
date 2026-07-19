@@ -1,5 +1,5 @@
-import {parse, stringify} from "jsr:@libs/xml";
-import {fromJS, isKeyed} from "npm:immutable";
+import {parse, stringify} from "@libs/xml";
+import {fromJS, isKeyed} from "immutable";
 
 function dedupe(xs) {
   return fromJS(xs, (k, v, p) => isKeyed(v) ? v.toOrderedMap() : v.toOrderedSet()).toJS();
