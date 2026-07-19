@@ -16,12 +16,13 @@
   },
   "dependencies": {
     "@libs/xml": "jsr:7.0.2",
-    "@thi.ng/atom": "5.3.42",
-    "lit": "3.3.1"
+    "@thi.ng/atom": "5.3.68",
+    "immutable": "5.1.9",
+    "lit": "3.3.3"
   },
   "devDependencies": {
     "@dblechoc/plugin-lit-refresh": "0.0.6",
-    "vite": "7.2.2"
+    "vite": "8.1.5"
   },
   "packageManager": "yarn@4.17.1"
 }
