@@ -30,16 +30,13 @@ export async function onRequestPost({request}) {
     return Response.json(xml);
   }
   if (accept === "text/xml") {
-    let response = new Response(stringify(xml), {
+    return new Response(stringify(xml), {
       status: 200,
-      headers: {"Content-Type": "text/xml"},
+      headers: {
+        "Content-Type": "text/xml",
+        "Content-Disposition": searchParams.has("download") ? `attachment; filename="My Mapping.xml"` : undefined,
+      },
     });
-    if (!searchParams.has("download")) {
-      return response;
-    }
-    const headers = new Headers(response.headers);
-    headers.set("Content-Disposition", `attachment; filename="My Mapping.xml"`);
-    return new Response(response.body, {status: response.status, headers, statusText: response.statusText});
   }
   return Response.error();
 }
