@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   root: "src",
   build: {
-    target: "",
+    target: "es2025",
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
