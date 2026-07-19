@@ -255,7 +255,9 @@ function template({ control, midi, selected, devices, routing }) {
 
 /**
  *
- * @param {HTMLElement} appRoot
+ * @param {Object} init
+ * @param {HTMLElement} init.appRoot
+ * @param {HTMLElement} [init.exportBtn]
  * @return {Promise<void>}
  */
 export async function main({ appRoot, exportBtn }) {
