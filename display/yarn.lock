@@ -5,15 +5,6 @@ __metadata:
   version: 10
   cacheKey: 10c0
 
-"@dblechoc/plugin-lit-refresh@npm:0.0.6":
-  version: 0.0.6
-  resolution: "@dblechoc/plugin-lit-refresh@npm:0.0.6"
-  peerDependencies:
-    vite: ^2.0.0
-  checksum: 10c0/33cc653de1397e1acf7676a35027fae1849817c8c157b1af2461900ae3fdbf12d1e6b0560f3b801929db4989ead04580729fe471af36ab9f79c9b0397689c5aa
-  languageName: node
-  linkType: hard
-
 "@emnapi/core@npm:1.11.1":
   version: 1.11.1
   resolution: "@emnapi/core@npm:1.11.1"
@@ -122,7 +113,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rarous/serato-mapping@workspace:."
   dependencies:
-    "@dblechoc/plugin-lit-refresh": "npm:0.0.6"
     "@libs/xml": "jsr:7.0.2"
     "@thi.ng/atom": "npm:5.3.68"
     immutable: "npm:5.1.9"
