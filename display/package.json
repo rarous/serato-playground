@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@libs/xml": "jsr:8.0.0",
-    "@thi.ng/atom": "5.3.68",
+    "@thi.ng/atom": "5.3.70",
     "immutable": "5.1.9",
     "lit": "3.3.3"
   },
