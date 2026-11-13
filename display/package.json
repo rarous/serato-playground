@@ -17,7 +17,7 @@
   "dependencies": {
     "@libs/xml": "jsr:8.0.0",
     "@thi.ng/atom": "5.3.68",
-    "immutable": "5.1.9",
+    "immutable": "5.2.1",
     "lit": "3.3.3"
   },
   "devDependencies": {
